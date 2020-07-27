@@ -1,0 +1,40 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  pytest:
+    name: pytest
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.6.10
+        poetry_version: 1.0.10
+        args: install
+    - name: Black
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.6.10
+        poetry_version: 1.0.10
+        args: run black --check .
+    - name: Black
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.6.10
+        poetry_version: 1.0.10
+        args: run flake8 .
+    - name: Run pytest
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.6.10
+        poetry_version: 1.0.10
+        args: run python -m pytest --cov=src --cov-branch --cov-fail-under=100 tests/
