@@ -60,4 +60,4 @@ jobs:
       with:
         python_version: 3.6.10
         poetry_version: 1.0.10
-        args: publish --build
+        args: publish --build -u __token__ -p ${{ secrets.PIPY_TOKEN }}
