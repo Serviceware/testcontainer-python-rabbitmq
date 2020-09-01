@@ -13,10 +13,10 @@ def test_rabbitmq():
         connection = pika.BlockingConnection(
             pika.ConnectionParameters(
                 host=container.get_container_host_ip(),
-                port=container.get_exposed_port(5672),
+                port=container.get_amqp_port(),
                 credentials=pika.PlainCredentials(username="guest", password="guest"),
             )
         )
-
+        
         # do something...
 ``` 

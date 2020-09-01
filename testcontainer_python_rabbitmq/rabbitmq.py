@@ -21,8 +21,8 @@ class RabbitMQContainer(DockerContainer):
         host = self.get_container_host_ip()
         return f"http://{host}:{port}"
 
-    def get_rabbit_port(self):
-        return self.get_exposed_port(self.port_to_expose)
+    def get_amqp_port(self):
+        return self.get_exposed_port(5672)
 
     def start(self):
         super().start()
