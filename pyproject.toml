@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "testcontainer-python-rabbitmq"
-version = "0.1.0"
+version = "0.2.0"
 description = "Testcontainer for RabbitMQ"
 authors = ["Max Fröhlich <max.froehlich@serviceware.de>"]
 readme = "README.md"
