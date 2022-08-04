@@ -1,7 +1,10 @@
 {
-    "python.pythonPath": "~/.cache/pypoetry/virtualenvs/testcontainer-python-rabbitmq-WwyjIo1e-py3.6/bin/python",
-    "python.formatting.provider": "black",
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.enabled": true
+  "python.pythonPath": "~/.cache/pypoetry/virtualenvs/testcontainer-python-rabbitmq-WwyjIo1e-py3.6/bin/python",
+  "python.formatting.provider": "black",
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
 }

@@ -1,7 +1,8 @@
+import os
+
+from requests import Response, exceptions, get, post
 from testcontainers.core.container import DockerContainer
 from testcontainers.core.waiting_utils import wait_container_is_ready
-from requests import get, post, Response
-import os
 
 
 class RabbitMQContainer(DockerContainer):
@@ -10,7 +11,7 @@ class RabbitMQContainer(DockerContainer):
 
         self.with_exposed_ports(5672, 15672)
 
-    @wait_container_is_ready()
+    @wait_container_is_ready(exceptions.ConnectionError)
     def _connect(self):
         res: Response = get(self.get_url())
         if res.status_code != 200:
