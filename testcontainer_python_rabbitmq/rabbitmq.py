@@ -6,7 +6,7 @@ from testcontainers.core.waiting_utils import wait_container_is_ready
 
 
 class RabbitMQContainer(DockerContainer):
-    def __init__(self, image="rabbitmq:3.7.17-management"):
+    def __init__(self, image="rabbitmq:3.9.22-management"):
         super(RabbitMQContainer, self).__init__(image)
 
         self.with_exposed_ports(5672, 15672)
@@ -15,7 +15,7 @@ class RabbitMQContainer(DockerContainer):
     def _connect(self):
         res: Response = get(self.get_url())
         if res.status_code != 200:
-            raise Exception()
+            raise exceptions.ConnectionError()
 
     def get_url(self):
         port = self.get_exposed_port(15672)

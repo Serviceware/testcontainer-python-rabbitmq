@@ -1,4 +1,5 @@
 import pika
+
 from testcontainer_python_rabbitmq import RabbitMQContainer
 
 
