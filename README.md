@@ -17,6 +17,6 @@ def test_rabbitmq():
                 credentials=pika.PlainCredentials(username="guest", password="guest"),
             )
         )
-        
+
         # do something...
-``` 
+```

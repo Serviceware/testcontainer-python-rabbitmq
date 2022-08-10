@@ -1,0 +1,31 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-yaml
+  #    -   id: end-of-file-fixer
+  #    -   id: trailing-whitespace
+  - repo: https://github.com/psf/black
+    rev: 22.6.0
+    hooks:
+      - id: black
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: "3.8.3" # pick a git hash / tag to point to
+    hooks:
+      - id: flake8
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v2.2.1" # Use the sha or tag you want to point at
+    hooks:
+      - id: prettier
+  - repo: https://github.com/pycqa/isort
+    rev: "5.8.0"
+    hooks:
+      - id: isort
+        name: isort (python)
+        args: ["--profile", "black", "--filter-files"]
+      - id: isort
+        name: isort (cython)
+        types: [cython]
+      - id: isort
+        name: isort (pyi)
+        types: [pyi]
